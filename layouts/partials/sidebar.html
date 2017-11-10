@@ -14,6 +14,8 @@
       {{end}}
     </ul>
 
+    {{ partial "newsnow.html" . }}
+    
     <ul class="sidebar-nav">
       <li class="sidebar-nav-item">
       {{ with .Site.Params.facebook }}<a href="{{ . }}"><i class="fa fa-facebook-square fa-2x"></i></a>{{ end }}
