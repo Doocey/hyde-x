@@ -14,3 +14,11 @@
   list-style: none;
   margin-bottom: 1rem;
 }
+/* Display Menu inline when under 768px */
+
+@media (max-width: 768px) {
+  .sidebar-nav-item {
+    display: inline-block;
+    line-height: 1.75;
+  }
+}

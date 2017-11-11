@@ -70,15 +70,6 @@ html {
   }
 }
 
-/* Display Menu inline when under 768px */
-
-@media (max-width: 768px) {
-  .sidebar-nav-item {
-    display: inline-block;
-    line-height: 1.75;
-  }
-}
-
 /* Sidebar links */
 .sidebar a {
   color: #fff;
