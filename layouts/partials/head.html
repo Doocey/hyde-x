@@ -19,9 +19,11 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
   <!-- Netlify CMS -->
-
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
+  <!-- SEO Markup -->
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/schema.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "/touch-icon-144-precomposed.png" | absURL }}">
   <link href="{{ "/favicon.png" | absURL }}" rel="icon">
@@ -30,7 +32,7 @@
   {{ $siteTitle := .Site.Title }}
   {{ $authorName := .Site.Author.name }}
   {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $siteTitle }} &middot; {{ $authorName }}" />{{ end }}
-
+  <link rel="canonical" href="{{ .Permalink | absURL }}">
   <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.defaultDescription }}{{ end }}">
   {{ with .Site.Params.googleAnalytics }}
   <script>
